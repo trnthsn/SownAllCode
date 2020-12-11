@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void nhapmang(int arr[], int n)
+void nhapmang(int arr[],int n)
 {
     for ( int i = 0; i < n; i++)
         cin >> arr[i];
@@ -32,50 +32,50 @@ void sapxep(int a[], int n)
 }
 
 
-bool isPrime(int n)
+bool find_odd(int n)
 {
-    if (n <= 1)
+    if ( n % 2 == 0)
         return false;
-
-    for (int i = 2; i < n; i++)
-        if (n % i == 0)
-            return false;
-
     return true;
 }
 
 
+
 int main()
 {
-    int n, count_prime, j;
-    count_prime = 0;
+    int n, count_odd, k,j;
+    count_odd = 0;
     j = 0;
     cin >> n;
     int arr[n];
-    nhapmang(arr, n);
+    nhapmang(arr,n);
 
     for ( int i = 0; i < n; i++)
-        if ( isPrime(arr[i]) == 1)
-            count_prime++;
-    int arr1[count_prime];
+        if ( find_odd(arr[i]) == 1)
+            count_odd++;
+
+    int arr1[count_odd];
 
     for ( int i = 0; i < n; i++)
-        if ( isPrime(arr[i]) == 1)
+        if ( find_odd(arr[i]) == 1)
         {
             arr1[j] = arr[i];
             j++;
         }
-    int bienmoi = 0 ;
-    sapxep(arr1, count_prime);
+
+    int kkk =0 ;
+
+    sapxep(arr1,count_odd);
+
     for ( int i = 0; i < n; i++)
-        if ( isPrime(arr[i]) == 1)
+        if ( find_odd(arr[i]) == 1)
         {
-            arr[i] = arr1[bienmoi++];
+            arr[i] = arr1[kkk++];
 
 
         }
 
-    xuatmang(arr, n);
+    xuatmang(arr,n);
 
     return 0;
 
