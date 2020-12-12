@@ -52,6 +52,5 @@ int main()
     nhapMang(arr, n);
     for (int i = 0; i < n; i++)
         countCharacter(arr[i]);
-//    xuatmang(arr, n);
     return 0;
 }
